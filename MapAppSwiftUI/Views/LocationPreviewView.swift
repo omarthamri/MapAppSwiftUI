@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LocationPreviewView: View {
+    @EnvironmentObject private var vm: LocationsViewModel
     let location: Location
     var body: some View {
         HStack(alignment: .bottom,spacing: 0) {
@@ -24,7 +25,9 @@ struct LocationPreviewView: View {
         .background(
             RoundedRectangle(cornerRadius: 10)
                 .fill(.ultraThinMaterial)
+                .offset(y: 65)
         )
+        .cornerRadius(10)
     }
 }
 
@@ -33,7 +36,9 @@ struct LocationPreviewView_Previews: PreviewProvider {
         ZStack {
             Color.green.ignoresSafeArea()
         LocationPreviewView(location: LocationsDataService.locations.first!)
+                .padding()
         }
+        .environmentObject(LocationsViewModel())
     }
 }
 
@@ -78,7 +83,7 @@ extension LocationPreviewView {
     
     private var nextButton: some View {
         Button {
-            
+            vm.nextButtonPressed()
         } label: {
             Text("Next")
                 .font(.headline)
