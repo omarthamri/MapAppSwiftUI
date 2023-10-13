@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		48019E012AD3124000922844 /* LocationPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48019E002AD3124000922844 /* LocationPreviewView.swift */; };
+		485ADCAF2AD9A5A4004CC2F0 /* LocationMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485ADCAE2AD9A5A4004CC2F0 /* LocationMapAnnotationView.swift */; };
 		486302F92AD1D0F4009F5132 /* LocationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486302F82AD1D0F4009F5132 /* LocationsListView.swift */; };
 		487948812ACC5ADC006A04AB /* MapAppSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487948802ACC5ADC006A04AB /* MapAppSwiftUIApp.swift */; };
 		487948832ACC5ADC006A04AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487948822ACC5ADC006A04AB /* ContentView.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		48019E002AD3124000922844 /* LocationPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPreviewView.swift; sourceTree = "<group>"; };
+		485ADCAE2AD9A5A4004CC2F0 /* LocationMapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapAnnotationView.swift; sourceTree = "<group>"; };
 		486302F82AD1D0F4009F5132 /* LocationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsListView.swift; sourceTree = "<group>"; };
 		4879487D2ACC5ADC006A04AB /* MapAppSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapAppSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		487948802ACC5ADC006A04AB /* MapAppSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAppSwiftUIApp.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				48E25CB22ACF1360007B405B /* LocationsView.swift */,
 				486302F82AD1D0F4009F5132 /* LocationsListView.swift */,
 				48019E002AD3124000922844 /* LocationPreviewView.swift */,
+				485ADCAE2AD9A5A4004CC2F0 /* LocationMapAnnotationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48E25CB12ACF1157007B405B /* LocationsDataService.swift in Sources */,
+				485ADCAF2AD9A5A4004CC2F0 /* LocationMapAnnotationView.swift in Sources */,
 				486302F92AD1D0F4009F5132 /* LocationsListView.swift in Sources */,
 				48019E012AD3124000922844 /* LocationPreviewView.swift in Sources */,
 				48E25CB52ACF2C9F007B405B /* LocationsViewModel.swift in Sources */,
