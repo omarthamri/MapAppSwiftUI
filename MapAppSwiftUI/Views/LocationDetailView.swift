@@ -74,4 +74,8 @@ extension LocationDetailView {
         }
     }
     
+    private var mapSection: some View {
+        Text("Map section")
+    }
+    
 }
