@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct LocationDetailView: View {
+    @EnvironmentObject private var vm: LocationsViewModel
     let location: Location
     var body: some View {
         ScrollView {
@@ -19,17 +21,23 @@ struct LocationDetailView: View {
                     Divider()
                     descriptionSection
                     Divider()
+                   mapLayer
                 }
                 .frame(maxWidth: .infinity,alignment: .leading)
                 .padding()
             }
         }
         .ignoresSafeArea()
+        .background(.ultraThinMaterial)
+        .overlay(alignment: .topLeading) {
+            backButton
+        }
     }
 }
 
 #Preview {
     LocationDetailView(location: LocationsDataService.locations.first!)
+        .environmentObject(LocationsViewModel())
 }
 
 extension LocationDetailView {
@@ -76,6 +84,33 @@ extension LocationDetailView {
     
     private var mapSection: some View {
         Text("Map section")
+    }
+    
+    private var mapLayer: some View {
+        Map(coordinateRegion: .constant(MKCoordinateRegion(center: location.coordinates, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))), annotationItems: [location]) { location in
+            MapAnnotation(coordinate: location.coordinates) {
+                LocationMapAnnotationView()
+                    .shadow(radius: 10)
+            }
+        }
+        .allowsHitTesting(false)
+        .aspectRatio(1, contentMode: .fit)
+        .cornerRadius(30)
+    }
+    
+    private var backButton: some View {
+        Button(action: {
+            vm.sheetLocation = nil
+        }, label: {
+            Image(systemName: "xmark")
+                .font(.headline)
+                .padding(16)
+                .foregroundColor(.primary)
+                .background(.thickMaterial)
+                .cornerRadius(10)
+                .shadow(radius: 4)
+                .padding()
+        })
     }
     
 }
